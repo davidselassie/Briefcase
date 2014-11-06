@@ -8,11 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		A1A588F01A0BF551009C56D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A588EF1A0BF551009C56D7 /* AppDelegate.swift */; };
-		A1A588F21A0BF551009C56D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A588F11A0BF551009C56D7 /* ViewController.swift */; };
+		A1A588F21A0BF551009C56D7 /* RunGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A588F11A0BF551009C56D7 /* RunGameViewController.swift */; };
 		A1A588F51A0BF551009C56D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1A588F31A0BF551009C56D7 /* Main.storyboard */; };
 		A1A588F71A0BF551009C56D7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1A588F61A0BF551009C56D7 /* Images.xcassets */; };
-		A1A588FA1A0BF551009C56D7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A588F81A0BF551009C56D7 /* LaunchScreen.xib */; };
 		A1A589061A0BF551009C56D7 /* BriefcaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A589051A0BF551009C56D7 /* BriefcaseTests.swift */; };
+		A1A589101A0BFB4A009C56D7 /* ScoreKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A5890F1A0BFB4A009C56D7 /* ScoreKeeper.swift */; };
+		A1A589111A0BFB4A009C56D7 /* ScoreKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A5890F1A0BFB4A009C56D7 /* ScoreKeeper.swift */; };
+		A1A589131A0BFD20009C56D7 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A589121A0BFD20009C56D7 /* Team.swift */; };
+		A1A589141A0BFD20009C56D7 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A589121A0BFD20009C56D7 /* Team.swift */; };
+		A1A589161A0C03DE009C56D7 /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A589151A0C03DE009C56D7 /* Locator.swift */; };
+		A1A589171A0C03DE009C56D7 /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A589151A0C03DE009C56D7 /* Locator.swift */; };
+		A1A589191A0C07CB009C56D7 /* Broadcaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A589181A0C07CB009C56D7 /* Broadcaster.swift */; };
+		A1A5891A1A0C07CB009C56D7 /* Broadcaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A589181A0C07CB009C56D7 /* Broadcaster.swift */; };
+		A1A5891F1A0C0B6E009C56D7 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A5891E1A0C0B6E009C56D7 /* Timer.swift */; };
+		A1A589201A0C0B6E009C56D7 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A5891E1A0C0B6E009C56D7 /* Timer.swift */; };
+		A1A589231A0C0DEB009C56D7 /* ScoreKeeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A589211A0C0DEB009C56D7 /* ScoreKeeperTests.swift */; };
+		A1A589251A0C38BE009C56D7 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A589241A0C38BE009C56D7 /* StartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +40,19 @@
 		A1A588EA1A0BF551009C56D7 /* Briefcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Briefcase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A588EE1A0BF551009C56D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1A588EF1A0BF551009C56D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A1A588F11A0BF551009C56D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A1A588F11A0BF551009C56D7 /* RunGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunGameViewController.swift; sourceTree = "<group>"; };
 		A1A588F41A0BF551009C56D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1A588F61A0BF551009C56D7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A1A588F91A0BF551009C56D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A1A588FF1A0BF551009C56D7 /* BriefcaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BriefcaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A589041A0BF551009C56D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1A589051A0BF551009C56D7 /* BriefcaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefcaseTests.swift; sourceTree = "<group>"; };
+		A1A5890F1A0BFB4A009C56D7 /* ScoreKeeper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreKeeper.swift; sourceTree = "<group>"; };
+		A1A589121A0BFD20009C56D7 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		A1A589151A0C03DE009C56D7 /* Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
+		A1A589181A0C07CB009C56D7 /* Broadcaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Broadcaster.swift; path = ../Broadcaster.swift; sourceTree = "<group>"; };
+		A1A5891E1A0C0B6E009C56D7 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		A1A589211A0C0DEB009C56D7 /* ScoreKeeperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreKeeperTests.swift; sourceTree = "<group>"; };
+		A1A589241A0C38BE009C56D7 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +94,17 @@
 		A1A588EC1A0BF551009C56D7 /* Briefcase */ = {
 			isa = PBXGroup;
 			children = (
+				A1A589181A0C07CB009C56D7 /* Broadcaster.swift */,
 				A1A588EF1A0BF551009C56D7 /* AppDelegate.swift */,
-				A1A588F11A0BF551009C56D7 /* ViewController.swift */,
+				A1A588F11A0BF551009C56D7 /* RunGameViewController.swift */,
 				A1A588F31A0BF551009C56D7 /* Main.storyboard */,
 				A1A588F61A0BF551009C56D7 /* Images.xcassets */,
-				A1A588F81A0BF551009C56D7 /* LaunchScreen.xib */,
 				A1A588ED1A0BF551009C56D7 /* Supporting Files */,
+				A1A5890F1A0BFB4A009C56D7 /* ScoreKeeper.swift */,
+				A1A589121A0BFD20009C56D7 /* Team.swift */,
+				A1A589151A0C03DE009C56D7 /* Locator.swift */,
+				A1A5891E1A0C0B6E009C56D7 /* Timer.swift */,
+				A1A589241A0C38BE009C56D7 /* StartViewController.swift */,
 			);
 			path = Briefcase;
 			sourceTree = "<group>";
@@ -99,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				A1A589051A0BF551009C56D7 /* BriefcaseTests.swift */,
+				A1A589211A0C0DEB009C56D7 /* ScoreKeeperTests.swift */,
 				A1A589031A0BF551009C56D7 /* Supporting Files */,
 			);
 			path = BriefcaseTests;
@@ -193,7 +216,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1A588F51A0BF551009C56D7 /* Main.storyboard in Resources */,
-				A1A588FA1A0BF551009C56D7 /* LaunchScreen.xib in Resources */,
 				A1A588F71A0BF551009C56D7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,8 +234,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1A588F21A0BF551009C56D7 /* ViewController.swift in Sources */,
+				A1A589131A0BFD20009C56D7 /* Team.swift in Sources */,
+				A1A589251A0C38BE009C56D7 /* StartViewController.swift in Sources */,
+				A1A589161A0C03DE009C56D7 /* Locator.swift in Sources */,
+				A1A589191A0C07CB009C56D7 /* Broadcaster.swift in Sources */,
+				A1A589101A0BFB4A009C56D7 /* ScoreKeeper.swift in Sources */,
+				A1A588F21A0BF551009C56D7 /* RunGameViewController.swift in Sources */,
 				A1A588F01A0BF551009C56D7 /* AppDelegate.swift in Sources */,
+				A1A5891F1A0C0B6E009C56D7 /* Timer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +249,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1A589171A0C03DE009C56D7 /* Locator.swift in Sources */,
+				A1A589201A0C0B6E009C56D7 /* Timer.swift in Sources */,
+				A1A589141A0BFD20009C56D7 /* Team.swift in Sources */,
+				A1A589231A0C0DEB009C56D7 /* ScoreKeeperTests.swift in Sources */,
+				A1A589111A0BFB4A009C56D7 /* ScoreKeeper.swift in Sources */,
 				A1A589061A0BF551009C56D7 /* BriefcaseTests.swift in Sources */,
+				A1A5891A1A0C07CB009C56D7 /* Broadcaster.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,14 +276,6 @@
 				A1A588F41A0BF551009C56D7 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A1A588F81A0BF551009C56D7 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A1A588F91A0BF551009C56D7 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -405,6 +431,7 @@
 				A1A5890B1A0BF551009C56D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A1A5890C1A0BF551009C56D7 /* Build configuration list for PBXNativeTarget "BriefcaseTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +440,7 @@
 				A1A5890E1A0BF551009C56D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,13 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k7d-9u-ZSb">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Start View Controller-->
+        <scene sceneID="5GC-A4-mCJ">
+            <objects>
+                <viewController id="k7d-9u-ZSb" customClass="StartViewController" customModule="Briefcase" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HFh-7U-ZGZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="73E-hb-yDj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jao-uE-CJw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="show" identifier="RunGame" id="g98-bI-VhW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b2A-IS-aSb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-316" y="357"/>
+        </scene>
+        <!--Run Game View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="RunGameViewController" customModule="Briefcase" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,8 +37,64 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7EJ-uG-Abs">
+                                <rect key="frame" x="16" y="20" width="568" height="268"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Red 0">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="redClick" destination="vXZ-lx-hvc" eventType="touchUpInside" id="QjZ-4Q-R9X"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gEL-VX-rg5">
+                                <rect key="frame" x="16" y="312" width="568" height="268"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.99819570779800415" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Blue 0">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="blueClick" destination="vXZ-lx-hvc" eventType="touchUpInside" id="sFz-rn-RNs"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eef-ub-IV1">
+                                <rect key="frame" x="16" y="296" width="568" height="2"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </progressView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7EJ-uG-Abs" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="E68-dA-NWR"/>
+                            <constraint firstItem="eef-ub-IV1" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="H7l-2n-BVG"/>
+                            <constraint firstAttribute="centerY" secondItem="eef-ub-IV1" secondAttribute="centerY" constant="3" id="I79-7S-DrB"/>
+                            <constraint firstItem="7EJ-uG-Abs" firstAttribute="height" secondItem="gEL-VX-rg5" secondAttribute="height" id="KgP-Cn-waK"/>
+                            <constraint firstItem="gEL-VX-rg5" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="MMe-9X-0fo"/>
+                            <constraint firstItem="7EJ-uG-Abs" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="MYV-9d-c4N"/>
+                            <constraint firstItem="eef-ub-IV1" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Mp0-2o-y5s"/>
+                            <constraint firstItem="gEL-VX-rg5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Plb-DU-asg"/>
+                            <constraint firstItem="7EJ-uG-Abs" firstAttribute="bottom" secondItem="eef-ub-IV1" secondAttribute="bottom" constant="-10" id="dTi-rM-uUe"/>
+                            <constraint firstItem="7EJ-uG-Abs" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="hFH-D7-167"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="gEL-VX-rg5" secondAttribute="bottom" constant="20" id="hZu-ai-lSR"/>
+                            <constraint firstItem="gEL-VX-rg5" firstAttribute="top" secondItem="eef-ub-IV1" secondAttribute="top" constant="16" id="plg-Kh-iIv"/>
+                            <constraint firstItem="7EJ-uG-Abs" firstAttribute="width" secondItem="eef-ub-IV1" secondAttribute="width" id="uEE-RY-GlX"/>
+                            <constraint firstItem="gEL-VX-rg5" firstAttribute="top" secondItem="7EJ-uG-Abs" secondAttribute="bottom" constant="24" id="xeX-Be-Kzt"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="KgP-Cn-waK"/>
+                                <exclude reference="uEE-RY-GlX"/>
+                                <exclude reference="xeX-Be-Kzt"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="blueButton" destination="gEL-VX-rg5" id="rVx-9x-j5r"/>
+                        <outlet property="gameProgress" destination="eef-ub-IV1" id="TRj-u1-3vG"/>
+                        <outlet property="redButton" destination="7EJ-uG-Abs" id="46t-Ao-ZE1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
