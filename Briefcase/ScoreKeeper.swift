@@ -22,7 +22,7 @@ class ScoreKeeper {
         self.transfers.append(Transfer(to: team, at: at))
     }
     
-    func scoresAt(date: NSDate) -> [Team: Double] {
+    func scoresAt(date: NSDate) -> [Team: Int] {
         var scores: [Team: Double] = [:]
         
         if let currentTeam = self.currentPosession() {
@@ -39,8 +39,12 @@ class ScoreKeeper {
                 scores[lastTransfer.to] = pointsAccrued
             }
         }
-        
-        return scores
+
+        var floorScores: [Team: Int] = [:]
+        for (team, score) in scores {
+            floorScores[team] = Int(floor(score))
+        }
+        return floorScores
     }
     
     internal func pointsFor(from: NSDate, to: NSDate) -> Double {

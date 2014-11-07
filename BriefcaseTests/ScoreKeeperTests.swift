@@ -48,7 +48,7 @@ class ScoreKeeperTests: XCTestCase {
         let sk = ScoreKeeper()
         sk.handoffTo(Team.Blue, at: minuteOne)
         let found = sk.scoresAt(minuteTwo)
-        let expected = [Team.Blue: 1.0]
+        let expected = [Team.Blue: 1]
         XCTAssertEqual(found, expected,
             "Scores after single handoff aren't correct")
     }
@@ -58,7 +58,7 @@ class ScoreKeeperTests: XCTestCase {
         sk.handoffTo(Team.Blue, at: minuteOne)
         sk.handoffTo(Team.Red, at: minuteTwo)
         let found = sk.scoresAt(minuteThree)
-        let expected = [Team.Blue: 1.0, Team.Red: 1.0]
+        let expected = [Team.Blue: 1, Team.Red: 1]
         XCTAssertEqual(found, expected,
             "Scores after second handoff aren't correct")
     }

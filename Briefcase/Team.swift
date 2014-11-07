@@ -8,15 +8,17 @@
 
 import Foundation
 
-enum Team {
+enum Team: Printable {
     case Red, Blue
 
-    func description() -> String {
-        switch self {
-        case Red:
-            return "Red"
-        case Blue:
-            return "Blue"
+    var description: String {
+        get {
+            switch self {
+            case Red:
+                return "Red"
+            case Blue:
+                return "Blue"
+            }
         }
     }
 }

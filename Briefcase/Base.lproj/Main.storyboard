@@ -16,7 +16,35 @@
                     <view key="view" contentMode="scaleToFill" id="Jao-uE-CJw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Test" borderStyle="roundedRect" placeholder="Game Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UfF-QB-9dn">
+                                <rect key="frame" x="16" y="28" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJm-6t-QGr">
+                                <rect key="frame" x="16" y="66" width="73" height="30"/>
+                                <state key="normal" title="Run Game">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xge-cz-Ibc">
+                                <rect key="frame" x="511" y="66" width="74" height="30"/>
+                                <state key="normal" title="Join Game">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UfF-QB-9dn" firstAttribute="top" secondItem="HFh-7U-ZGZ" secondAttribute="bottom" constant="8" id="3QY-gn-4Xh"/>
+                            <constraint firstItem="UfF-QB-9dn" firstAttribute="trailing" secondItem="Jao-uE-CJw" secondAttribute="trailingMargin" id="784-3a-7Id"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xge-cz-Ibc" secondAttribute="trailing" constant="-1" id="fQV-mX-b2R"/>
+                            <constraint firstItem="NJm-6t-QGr" firstAttribute="leading" secondItem="Jao-uE-CJw" secondAttribute="leadingMargin" id="iok-2n-oGZ"/>
+                            <constraint firstItem="UfF-QB-9dn" firstAttribute="leading" secondItem="Jao-uE-CJw" secondAttribute="leadingMargin" id="pf6-9d-j6N"/>
+                            <constraint firstItem="Xge-cz-Ibc" firstAttribute="top" secondItem="UfF-QB-9dn" secondAttribute="bottom" constant="8" id="qLZ-Jg-9PW"/>
+                            <constraint firstItem="NJm-6t-QGr" firstAttribute="top" secondItem="UfF-QB-9dn" secondAttribute="bottom" constant="8" id="yXQ-lV-BTf"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="show" identifier="RunGame" id="g98-bI-VhW"/>
@@ -42,7 +70,7 @@
                                 <rect key="frame" x="16" y="20" width="568" height="268"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                 <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Red 0">
+                                <state key="normal" title="0">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -53,7 +81,7 @@
                                 <rect key="frame" x="16" y="312" width="568" height="268"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.99819570779800415" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Blue 0">
+                                <state key="normal" title="0">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>

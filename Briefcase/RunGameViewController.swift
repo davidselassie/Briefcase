@@ -16,7 +16,7 @@ class RunGameViewController: UIViewController {
     let gameLengthMin: Double = 1.0
 
     var scoreKeeper: ScoreKeeper
-    var broadcaster: Broadcaster
+    var broadcaster: Broadcaster?
     var locator: Locator
     var locBroadcastTimer: Timer
     var gameProgressTimer: Timer
@@ -25,7 +25,6 @@ class RunGameViewController: UIViewController {
 
     required init(coder aDecoder: NSCoder) {
         self.scoreKeeper = ScoreKeeper()
-        self.broadcaster = Broadcaster(group: "hi")
         self.locator = Locator()
 
         self.locBroadcastTimer = Timer()
@@ -36,7 +35,7 @@ class RunGameViewController: UIViewController {
         super.init(coder: aDecoder)
     }
 
-    override func viewDidLoad() {
+    override func viewDidAppear(animated: Bool) {
         self.locBroadcastTimer = Timer(
             interval: 5.0,
             callback: self.locBroadcastTick)
@@ -45,18 +44,18 @@ class RunGameViewController: UIViewController {
             interval: 0.1,
             callback: self.gameProgressTick)
         self.gameProgressTimer.start()
-        super.viewDidLoad()
+        super.viewDidAppear(animated)
     }
 
     @IBAction func redClick() {
         self.scoreKeeper.handoffTo(Team.Red, at: NSDate())
-        self.broadcaster.handoffPing(self.scoreKeeper)
+        self.broadcaster?.handoffPing(self.scoreKeeper)
         self.setProgressTint(0.0)
     }
 
     @IBAction func blueClick() {
         self.scoreKeeper.handoffTo(Team.Blue, at: NSDate())
-        self.broadcaster.handoffPing(self.scoreKeeper)
+        self.broadcaster?.handoffPing(self.scoreKeeper)
         self.setProgressTint(235.0 / 360.0)
     }
 
@@ -66,7 +65,7 @@ class RunGameViewController: UIViewController {
     }
 
     func locBroadcastTick() {
-        self.broadcaster.locationPing(self.locator)
+        self.broadcaster?.locationPing(self.locator)
     }
 
     func gameProgressTick() {
@@ -77,11 +76,21 @@ class RunGameViewController: UIViewController {
         self.gameProgress.progress = Float(ratio)
 
         if ratio >= 1.0 {
-            self.broadcaster.gameOver()
+            self.broadcaster?.gameOver(self.scoreKeeper.scoresAt(now))
+            self.gameProgressTimer = Timer()
         }
 
-        let scores = self.scoreKeeper.scoresAt(now)
-        self.redButton.titleLabel?.text = "Red \(floor(scores[Team.Red] ?? 0.0))"
-        self.blueButton.titleLabel?.text = "Blue \(floor(scores[Team.Blue] ?? 0.0))"
+        self.updateScoreLabels()
+    }
+
+    internal var lastScores: [Team: Int] = [:]
+    func updateScoreLabels() {
+        let scores: [Team: Int] = self.scoreKeeper.scoresAt(NSDate())
+        if scores != self.lastScores {
+            self.broadcaster?.scorePing(scores)
+            self.redButton.setTitle("\(scores[Team.Red] ?? 0)", forState: UIControlState.Normal)
+            self.blueButton.setTitle("\(scores[Team.Blue] ?? 0)", forState: UIControlState.Normal)
+            self.lastScores = scores
+        }
     }
 }

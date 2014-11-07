@@ -8,28 +8,49 @@
 
 import Foundation
 import CoreLocation
+import AddressBookUI
 
-class Locator {
-    let locationManager = CLLocationManager()
-    let geocoder = CLGeocoder()
+typealias LocatedHandler = (String) -> Void
+
+class Locator: NSObject, CLLocationManagerDelegate {
+    internal let locationManager = CLLocationManager()
+    internal let geocoder = CLGeocoder()
+
+    internal var callback: LocatedHandler?
     
-    init() {
+    override init() {
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         self.locationManager.activityType = CLActivityType.Fitness
         self.locationManager.startUpdatingLocation()
+        super.init()
     }
 
-    func locationManager(
+    internal func locationManager(
         manager: CLLocationManager!,
         didUpdateLocations locations: [AnyObject]!) {
+            if let callback = self.callback {
+                self.reverseGeocode(manager.location, callback: callback)
+                self.callback = nil
+            }
+    }
+    
+    func currentLocation(callback: LocatedHandler) {
+        if let knownLocation = self.locationManager.location {
+            self.reverseGeocode(knownLocation, callback: callback)
+        } else {
+            self.callback = callback
+        }
+    }
 
+    internal func reverseGeocode(location: CLLocation, callback: LocatedHandler) {
+        self.geocoder.reverseGeocodeLocation(location, completionHandler: {
+            (placemarks: [AnyObject]!, error: NSError!) -> Void in
+            let placemark = placemarks.first? as CLPlacemark
+            callback(self.prettyString(placemark))
+        })
     }
-    
-    func currentLocation() -> CLLocation {
-        return self.locationManager.location
-    }
-    
-    func currentStringLocation() -> String {
-        return "XX"
+
+    internal func prettyString(placemark: CLPlacemark) -> String {
+        return ABCreateStringWithAddressDictionary(placemark.addressDictionary, false)
     }
 }
